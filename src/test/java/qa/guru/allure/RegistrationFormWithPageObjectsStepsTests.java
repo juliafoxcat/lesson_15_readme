@@ -1,26 +1,17 @@
-package qa.guru.allure.tests;
+package qa.guru.allure;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
-import org.junit.jupiter.api.DisplayName;
-import qa.guru.allure.pages.RegistrationFormPage;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
 import io.qameta.allure.selenide.AllureSelenide;
-//import helpers.Attach;
-import static com.codeborne.selenide.Selenide.webdriver;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import qa.guru.allure.pages.RegistrationFormPage;
 
-
-import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
-import static org.openqa.selenium.By.linkText;
-import static io.qameta.allure.Allure.attachment;
 
-public class RegistrationFormWithPageObjectsTests {
+public class RegistrationFormWithPageObjectsStepsTests {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     private static final String firstName, lastName, email, gender, mobile, day, month, year, hobbie, file, address, state, city;
