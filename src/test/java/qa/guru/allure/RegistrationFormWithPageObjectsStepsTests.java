@@ -26,7 +26,7 @@ public class RegistrationFormWithPageObjectsStepsTests {
         month = "July";
         year = "1997";
         hobbie = "Music";
-        file = "Floppa.png";
+        file = "floppa.png";
         address = "My address";
         state = "NCR";
         city = "Delhi";
