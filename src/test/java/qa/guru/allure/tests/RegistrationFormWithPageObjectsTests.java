@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import io.qameta.allure.selenide.AllureSelenide;
-import helpers.Attach;
+//import helpers.Attach;
 import static com.codeborne.selenide.Selenide.webdriver;
 
 
@@ -57,20 +57,20 @@ public class RegistrationFormWithPageObjectsTests {
     void fillFormTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {
-        registrationFormPage.openPage();
+            registrationFormPage.openPage();
         });
         step("Заполняем все поля", () -> {
-        registrationFormPage.setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setNumber(mobile)
-                .setBirthDate(day, month, year)
-                .setHobbies(hobbie)
-                .setFile(file)
-                .setAddress(address)
-                .setPlace(state, city)
-                .submitForm();
+            registrationFormPage.setFirstName(firstName)
+                    .setLastName(lastName)
+                    .setEmail(email)
+                    .setGender(gender)
+                    .setNumber(mobile)
+                    .setBirthDate(day, month, year)
+                    .setHobbies(hobbie)
+                    .setFile(file)
+                    .setAddress(address)
+                    .setPlace(state, city)
+                    .submitForm();
         });
 
         step("Проверяем все поля на совпадение данных", () -> {
@@ -85,13 +85,8 @@ public class RegistrationFormWithPageObjectsTests {
                     .checkResult("Address", address)
                     .checkResult("State and City", state + " " + city);
         });
-        }
-    @AfterEach
-    void AddAttachments() {
-        Attach.screenshotAs("Last screenshots");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
-
     }
+}
+
+
 
