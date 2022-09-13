@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import qa.guru.allure.pages.RegistrationFormPage;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormWithPageObjectsStepsTests {
