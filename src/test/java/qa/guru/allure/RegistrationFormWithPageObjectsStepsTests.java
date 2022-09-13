@@ -9,10 +9,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import qa.guru.allure.pages.RegistrationFormPage;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import qa.guru.allure.pages.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
-public class RegistrationFormWithPageObjectsStepsTests {
+public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     private static final String firstName, lastName, email, gender, mobile, day, month, year, hobbie, file, address, state, city;
