@@ -15,8 +15,8 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("browserName", "chrome");
-//        capabilities.setCapability("browserVersion", "100.0");
+        //capabilities.setCapability("browserName", "chrome");
+        //capabilities.setCapability("browserVersion", "100.0");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
@@ -30,6 +30,8 @@ public class TestBase {
         } else {
             Configuration.browser ="safari";
             Configuration.browserSize ="1920x1180";
+            capabilities.setCapability("browserName", Configuration.browser);
+            capabilities.setCapability("browserSize", Configuration.browserSize);
         }
 
     }
