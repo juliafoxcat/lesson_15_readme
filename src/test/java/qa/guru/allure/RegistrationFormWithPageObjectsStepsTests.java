@@ -6,6 +6,7 @@ import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qa.guru.allure.pages.RegistrationFormPage;
 import org.openqa.selenium.remote.DesiredCapabilities;

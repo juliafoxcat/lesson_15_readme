@@ -22,8 +22,16 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        if(System.getProperty("remote").equals("true")) {
+            Configuration.browser = System.getProperty("browser_name");
+            Configuration.browserVersion = System.getProperty("browser_version");
+            Configuration.browserSize = System.getProperty("browser_size");
+            Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        } else {
+            Configuration.browser ="chrome";
+            Configuration.browserSize ="1920x1180";
+        }
+
     }
 
     @AfterEach
