@@ -27,6 +27,9 @@ public class TestBase {
             Configuration.browserVersion = System.getProperty("browser_version");
             Configuration.browserSize = System.getProperty("browser_size");
             Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+            capabilities.setCapability("browserName", Configuration.browser);
+            capabilities.setCapability("browserSize", Configuration.browserSize);
+            capabilities.setCapability("browserName", Configuration.browserVersion);
         } else {
             Configuration.browser ="safari";
             Configuration.browserSize ="1920x1180";
