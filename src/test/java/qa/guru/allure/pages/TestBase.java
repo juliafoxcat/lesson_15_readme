@@ -23,7 +23,6 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = "chrome";
-        Configuration.browserVersion = "105";
         Configuration.browserSize = "1920x1080";
         if(System.getProperty("selenide.remote") != null) {
             Configuration.remote = System.getProperty("selenide.remote");
@@ -32,14 +31,14 @@ public class TestBase {
             Configuration.browser = System.getProperty("browserName");
         }
         if(System.getProperty("browserSize") != null) {
-            Configuration.browser = System.getProperty("browserSize");
+            Configuration.browserSize = System.getProperty("browserSize");
         }
-        if(System.getProperty("browserVerison") != null) {
-            Configuration.browser = System.getProperty("browserVersion");
+        if(System.getProperty("browserVersion") != null) {
+            Configuration.browserVersion = System.getProperty("browserVersion");
+            capabilities.setCapability("browserVersion", Configuration.browserVersion);
         }
         capabilities.setCapability("browserName", Configuration.browser);
         capabilities.setCapability("browserSize", Configuration.browserSize);
-        capabilities.setCapability("browserVersion", Configuration.browserVersion);
     }
 
     @AfterEach
