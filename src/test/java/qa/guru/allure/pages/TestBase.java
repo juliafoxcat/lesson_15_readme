@@ -22,7 +22,7 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        if(System.getProperty("remote").equals(true)) {
+        if(System.getProperty("remote").equals("true")) {
             Configuration.browser = System.getProperty("browser_name");
             Configuration.browserVersion = System.getProperty("browser_version");
             Configuration.browserSize = System.getProperty("browser_size");
