@@ -25,7 +25,7 @@ public class TestBase {
         Configuration.browser = "chrome";
         Configuration.browserVersion = "105";
         Configuration.browserSize = "1920x1080";
-        if(System.getProperty("remote") != null) {
+        if(System.getProperty("selenide.remote") != null) {
             Configuration.remote = System.getProperty("selenide.remote");
         }
         if(System.getProperty("browserName") != null) {
