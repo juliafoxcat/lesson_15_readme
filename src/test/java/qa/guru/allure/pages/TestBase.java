@@ -22,21 +22,24 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        if(System.getProperty("remote").equals("true")) {
-            Configuration.browser = System.getProperty("browser_name");
-            Configuration.browserVersion = System.getProperty("browser_version");
-            Configuration.browserSize = System.getProperty("browser_size");
-            Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-            capabilities.setCapability("browserName", Configuration.browser);
-            capabilities.setCapability("browserSize", Configuration.browserSize);
-            capabilities.setCapability("browserName", Configuration.browserVersion);
-        } else {
-            Configuration.browser ="safari";
-            Configuration.browserSize ="1920x1180";
-            capabilities.setCapability("browserName", Configuration.browser);
-            capabilities.setCapability("browserSize", Configuration.browserSize);
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "105";
+        Configuration.browserSize = "1920x1080";
+        if(System.getProperty("remote") != null) {
+            Configuration.remote = System.getProperty("selenide.remote");
         }
-
+        if(System.getProperty("browserName") != null) {
+            Configuration.browser = System.getProperty("browserName");
+        }
+        if(System.getProperty("browserSize") != null) {
+            Configuration.browser = System.getProperty("browserSize");
+        }
+        if(System.getProperty("browserVerison") != null) {
+            Configuration.browser = System.getProperty("browserVersion");
+        }
+        capabilities.setCapability("browserName", Configuration.browser);
+        capabilities.setCapability("browserSize", Configuration.browserSize);
+        capabilities.setCapability("browserVersion", Configuration.browserVersion);
     }
 
     @AfterEach
