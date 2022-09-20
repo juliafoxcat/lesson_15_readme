@@ -1,16 +1,11 @@
-package qa.guru.allure;
+package qa.guru.allure.test;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qa.guru.allure.pages.RegistrationFormPage;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import qa.guru.allure.pages.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
