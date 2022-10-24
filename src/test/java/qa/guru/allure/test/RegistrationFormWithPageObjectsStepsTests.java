@@ -49,6 +49,7 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
             $("#individual-signup").click();
             $("#signup-firstname-input").setValue(firstName);
             $("#signup-lastname-input").setValue(lastName);
+            $(".PageTitle").shouldHave(text("Sign up"));
         });
 
 //    @Test
