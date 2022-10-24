@@ -21,7 +21,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.baseUrl = "https://partners.propellerads.com";
+        Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = System.getProperty("browserName");
         if (System.getProperty("remoteUrl") != null && System.getProperty("remoteUrl") != "") {
             Configuration.remote = System.getProperty("remoteUrl");
