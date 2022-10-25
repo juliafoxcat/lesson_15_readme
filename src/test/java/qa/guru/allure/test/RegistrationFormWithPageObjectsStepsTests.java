@@ -7,6 +7,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import qa.guru.allure.pages.RegistrationFormPage;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
@@ -30,43 +33,63 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
         city = "Delhi";
     }
 
-
     @Test
-    @Feature("Форма на Demoqa.com")
-    @Story("Заполнение и отправка формы")
+    @Feature("Registration Form")
+    @Story("Registration for new Advertiser with all fields")
     @Owner("juliafoxcat")
     @Severity(SeverityLevel.BLOCKER)
-    @DisplayName("Проверка формы на Demoqa.com")
-    void fillFormTest() {
+    @DisplayName("Registration Form Propellerads.com")
+    void fillFormTestProp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        step("Открываем главную страницу", () -> {
-            registrationFormPage.openPage();
+        step("Open page", () -> {
+            open("/#/auth/signUp");
+            $("#onetrust-accept-btn-handler").click();
+            $(".PageTitle").shouldHave(text("Sign up"));
         });
-        step("Заполняем все поля", () -> {
-            registrationFormPage.setFirstName(firstName)
-                    .setLastName(lastName)
-                    .setEmail(email)
-                    .setGender(gender)
-                    .setNumber(mobile)
-                    .setBirthDate(day, month, year)
-                    .setHobbies(hobbie)
-                    .setFile(file)
-                    .setAddress(address)
-                    .setPlace(state, city)
-                    .submitForm();
-        });
-
-        step("Проверяем все поля на совпадение данных", () -> {
-            registrationFormPage.checkResultsTableVisible()
-                    .checkResult("Student Name", firstName + " " + lastName)
-                    .checkResult("Student Email", email)
-                    .checkResult("Gender", gender)
-                    .checkResult("Mobile", mobile)
-                    .checkResult("Date of Birth", day + " " + month + "," + year)
-                    .checkResult("Hobbies", hobbie)
-                    .checkResult("Picture", file)
-                    .checkResult("Address", address)
-                    .checkResult("State and City", state + " " + city);
+        step("Fill all the fields", () -> {
+            $("[for=\"individual-signup\"]").click();
+            $("#signup-firstname-input").setValue(firstName);
+            $("#signup-lastname-input").setValue(lastName);
+            $(".PageTitle").shouldHave(text("Sign up"));
         });
     }
+
+//    @Test
+//    @Feature("Форма на Demoqa.com")
+//    @Story("Заполнение и отправка формы")
+//    @Owner("juliafoxcat")
+//    @Severity(SeverityLevel.BLOCKER)
+//    @DisplayName("Проверка формы на Demoqa.com")
+//    void fillFormTest() {
+//        SelenideLogger.addListener("allure", new AllureSelenide());
+//        step("Открываем главную страницу", () -> {
+//            registrationFormPage.openPage();
+//        });
+//        step("Заполняем все поля", () -> {
+//            registrationFormPage.setFirstName(firstName)
+//                    .setLastName(lastName)
+//                    .setEmail(email)
+//                    .setGender(gender)
+//                    .setNumber(mobile)
+//                    .setBirthDate(day, month, year)
+//                    .setHobbies(hobbie)
+//                    .setFile(file)
+//                    .setAddress(address)
+//                    .setPlace(state, city)
+//                    .submitForm();
+//        });
+//
+//        step("Проверяем все поля на совпадение данных", () -> {
+//            registrationFormPage.checkResultsTableVisible()
+//                    .checkResult("Student Name", firstName + " " + lastName)
+//                    .checkResult("Student Email", email)
+//                    .checkResult("Gender", gender)
+//                    .checkResult("Mobile", mobile)
+//                    .checkResult("Date of Birth", day + " " + month + "," + year)
+//                    .checkResult("Hobbies", hobbie)
+//                    .checkResult("Picture", file)
+//                    .checkResult("Address", address)
+//                    .checkResult("State and City", state + " " + city);
+//        });
+//    }
 }
