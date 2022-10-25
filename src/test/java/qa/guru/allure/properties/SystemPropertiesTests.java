@@ -30,16 +30,16 @@ public class SystemPropertiesTests {
 //        System.out.println(browserName); // opera
 //    }
 
-    @Test
-    @Tag("properties")
-    void simplePropertyTes4() {
-        String browserName = System.getProperty("browser_name", "firefox");
-        String browserVersion = System.getProperty("browser_version", "101");
-        String browserSize = System.getProperty("browser_size", "1920x1080");
-
-        System.out.println(browserName);
-        System.out.println(browserVersion);
-        System.out.println(browserSize);
+//    @Test
+//    @Tag("properties")
+//    void simplePropertyTes4() {
+//        String browserName = System.getProperty("browser_name", "firefox");
+//        String browserVersion = System.getProperty("browser_version", "101");
+//        String browserSize = System.getProperty("browser_size", "1920x1080");
+//
+//        System.out.println(browserName);
+//        System.out.println(browserVersion);
+//        System.out.println(browserSize);
 
         /*
         From IDEA
@@ -59,7 +59,7 @@ public class SystemPropertiesTests {
                 99.0
                 300x300
          */
-    }
+    //}
 
 //    @Test
 //    @Tag("hello")
