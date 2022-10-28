@@ -49,23 +49,23 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
         });
     };
 
-    @Test
-    @Feature("Xbox main page")
-    @Story("Changing the language")
-    @Owner("juliafoxcat")
-    @Severity(SeverityLevel.BLOCKER)
-    @DisplayName("Check language")
-    void changeLang() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        step("Open page", () -> {
-            open("/ru-RU");
-        });
-        step("Language change", () -> {
-            $("#locale-picker-link").click();
-            $("#PageContent div div div").$("div", 2).click();
-            $("#locale-picker-link").shouldHave(Condition.text("Argentina"));
-        });
-    };
+//    @Test
+//    @Feature("Xbox main page")
+//    @Story("Changing the language")
+//    @Owner("juliafoxcat")
+//    @Severity(SeverityLevel.BLOCKER)
+//    @DisplayName("Check language")
+//    void changeLang() {
+//        SelenideLogger.addListener("allure", new AllureSelenide());
+//        step("Open page", () -> {
+//            open("/ru-RU");
+//        });
+//        step("Language change", () -> {
+//            $("#locale-picker-link").click();
+//            $("#PageContent div div div").$("div", 2).click();
+//            $("#locale-picker-link").shouldHave(Condition.text("Argentina"));
+//        });
+//    }
 
 //    @Test
 //    @Feature("Xbox main page")
