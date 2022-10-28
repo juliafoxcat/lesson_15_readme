@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -62,8 +63,8 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
         });
         step("Language change", () -> {
             $("#locale-picker-link").click();
-            $("#PageContent div div div").$("div", 2).click();
-            $("#locale-picker-link").shouldHave(Condition.text("Argentina"));
+            $(byText("Argentina - Español")).click();
+            $("#c-shellmenu_49").shouldHave(Condition.text("Juegos"));
         });
     }
 
