@@ -17,60 +17,43 @@ import static com.codeborne.selenide.WebDriverConditions.urlStartingWith;
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
-//
-//    @Test
-//    @Feature("Xbox main page")
-//    @Story("Looking for Assassin")
-//    @Owner("juliafoxcat")
-//    @Severity(SeverityLevel.BLOCKER)
-//    @DisplayName("Check Assassin's name")
-//    void lookingForAssassin() {
-//        SelenideLogger.addListener("allure", new AllureSelenide());
-//        step("Open page", () -> {
-//            open("/ru-RU");
-//        });
-//        step("Looking for Assasin", () -> {
-//            $("#search").click();
-//            $("#cli_shellHeaderSearchInput").setValue("assassin");
-//            $("#search").click();
-//            $("#nav-gamescreatorscollection div h2").shouldHave(Condition.text("Creators Collection"));
-//        });
-//    }
-//
-//    @Test
-//    @Feature("Xbox main page")
-//    @Story("Changing the language")
-//    @Owner("juliafoxcat")
-//    @Severity(SeverityLevel.BLOCKER)
-//    @DisplayName("Check language")
-//    void changeLang() {
-//        SelenideLogger.addListener("allure", new AllureSelenide());
-//        step("Open page", () -> {
-//            open("/ru-RU");
-//        });
-//        step("Language change", () -> {
-//            $("#locale-picker-link").click();
-//            $(byText("Argentina - Español")).click();
-//            $("#c-shellmenu_49").shouldHave(Condition.text("Juegos"));
-//        });
-//    }
-//
-//    @Test
-//    @Feature("Xbox main page")
-//    @Story("Redirect to Microsoft")
-//    @Owner("juliafoxcat")
-//    @Severity(SeverityLevel.BLOCKER)
-//    @DisplayName("Check the redirect")
-//    void redirect() {
-//        SelenideLogger.addListener("allure", new AllureSelenide());
-//        step("Open page", () -> {
-//            open("/ru-RU");
-//        });
-//        step("Go to Microsoft", () -> {
-//            $("#uhfLogo").click();
-//            webdriver().shouldHave(urlStartingWith("https://www.microsoft.com/"));
-//        });
-//    }
+
+    @Test
+    @Feature("Xbox main page")
+    @Story("Looking for Assassin")
+    @Owner("juliafoxcat")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Check Assassin's name")
+    void lookingForAssassin() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        step("Open page", () -> {
+            open("/ru-RU");
+        });
+        step("Looking for Assasin", () -> {
+            $("#search").click();
+            $("#cli_shellHeaderSearchInput").setValue("assassin");
+            $("#search").click();
+            $("#nav-gamescreatorscollection div h2").shouldHave(Condition.text("Creators Collection"));
+        });
+    }
+
+    @Test
+    @Feature("Xbox main page")
+    @Story("Changing the language")
+    @Owner("juliafoxcat")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Check language")
+    void changeLang() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        step("Open page", () -> {
+            open("/ru-RU");
+        });
+        step("Language change", () -> {
+            $("#locale-picker-link").click();
+            $(byText("Argentina - Español")).click();
+            $("#c-shellmenu_49").shouldHave(Condition.text("Juegos"));
+        });
+    }
 
     @Test
     @Feature("Xbox main page")
@@ -84,7 +67,41 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
             open("/ru-RU");
         });
         step("Go to Microsoft", () -> {
+            $("#uhfLogo").click();
+            webdriver().shouldHave(urlStartingWith("https://www.microsoft.com/"));
+        });
+    }
+
+    @Test
+    @Feature("Xbox main page")
+    @Story("Game Pass")
+    @Owner("juliafoxcat")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Check Game Pass")
+    void gamePass() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        step("Open page", () -> {
+            open("/ru-RU");
+        });
+        step("Check Game Pass", () -> {
             $("#ContentBlockList_3 div div a div p span").shouldHave(Condition.text("GAME PASS"));
+        });
+    }
+
+    @Test
+    @Feature("Xbox main page")
+    @Story("Going to Login page")
+    @Owner("juliafoxcat")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Check opening Login")
+    void loginPage() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        step("Open page", () -> {
+            open("/ru-RU");
+        });
+        step("Going to Login page", () -> {
+            $("#mectrl_headerPicture").click();
+            webdriver().shouldHave(urlStartingWith("https://login.live.com/"));
         });
     }
 }
