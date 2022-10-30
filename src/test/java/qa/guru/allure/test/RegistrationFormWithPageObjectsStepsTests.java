@@ -17,24 +17,7 @@ import static com.codeborne.selenide.WebDriverConditions.urlStartingWith;
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
-    private static final String firstName, lastName, email, phone, text, day, month, year, hobbie, file, address, state, city;
-
-    static {
-        firstName = "Iuliia";
-        lastName = "Kudrina";
-        email = "rrr@mail.com";
-        phone = "+19674563411";
-        text = "randomtext";
-        day = "15";
-        month = "July";
-        year = "1997";
-        hobbie = "Music";
-        file = "floppa.png";
-        address = "My address";
-        state = "NCR";
-        city = "Delhi";
-    }
-
+//
 //    @Test
 //    @Feature("Xbox main page")
 //    @Story("Looking for Assassin")
@@ -71,21 +54,37 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
 //            $("#c-shellmenu_49").shouldHave(Condition.text("Juegos"));
 //        });
 //    }
+//
+//    @Test
+//    @Feature("Xbox main page")
+//    @Story("Redirect to Microsoft")
+//    @Owner("juliafoxcat")
+//    @Severity(SeverityLevel.BLOCKER)
+//    @DisplayName("Check the redirect")
+//    void redirect() {
+//        SelenideLogger.addListener("allure", new AllureSelenide());
+//        step("Open page", () -> {
+//            open("/ru-RU");
+//        });
+//        step("Go to Microsoft", () -> {
+//            $("#uhfLogo").click();
+//            webdriver().shouldHave(urlStartingWith("https://www.microsoft.com/"));
+//        });
+//    }
 
     @Test
     @Feature("Xbox main page")
-    @Story("Changing the language")
+    @Story("Redirect to Microsoft")
     @Owner("juliafoxcat")
     @Severity(SeverityLevel.BLOCKER)
-    @DisplayName("Check language")
-    void changeLang() {
+    @DisplayName("Check the redirect")
+    void redirect() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Open page", () -> {
             open("/ru-RU");
         });
-        step("Language change", () -> {
-            $("#uhfLogo").click();
-            webdriver().shouldHave(urlStartingWith("https://www.microsoft.com/"));
+        step("Go to Microsoft", () -> {
+            $("#ContentBlockList_3 div div a div p span").shouldHave(Condition.text("GAME PASS"));
         });
     }
 }
