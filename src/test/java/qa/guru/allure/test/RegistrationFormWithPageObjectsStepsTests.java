@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
+import static com.codeborne.selenide.WebDriverConditions.urlStartingWith;
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
@@ -84,7 +85,7 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
         });
         step("Language change", () -> {
             $("#uhfLogo").click();
-            webdriver().shouldHave(url("https://www.microsoft.com/sr-latn-rs/"));
+            webdriver().shouldHave(urlStartingWith("https://www.microsoft.com/"));
         });
     }
 }
