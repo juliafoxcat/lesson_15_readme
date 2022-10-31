@@ -6,6 +6,7 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
@@ -28,6 +29,7 @@ public class TestBase {
         }
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.browserSize = System.getProperty("browserSize");
+
     }
 
     @AfterEach
@@ -36,5 +38,10 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+    }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 }

@@ -1,22 +1,18 @@
 package qa.guru.allure.test;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverConditions.url;
 import static com.codeborne.selenide.WebDriverConditions.urlStartingWith;
 import static io.qameta.allure.Allure.step;
 
-public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
+public class XboxTests extends TestBase {
 
     @Test
     @Feature("Xbox main page")
@@ -25,7 +21,6 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Check Assassin's name")
     void lookingForAssassin() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Open page", () -> {
             open("/ru-RU");
         });
@@ -44,7 +39,6 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Check language")
     void changeLang() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Open page", () -> {
             open("/ru-RU");
         });
@@ -62,7 +56,6 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Check the redirect")
     void redirect() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Open page", () -> {
             open("/ru-RU");
         });
@@ -79,7 +72,6 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Check Game Pass")
     void gamePass() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Open page", () -> {
             open("/ru-RU");
         });
@@ -95,7 +87,6 @@ public class RegistrationFormWithPageObjectsStepsTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Check opening Login")
     void loginPage() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Open page", () -> {
             open("/ru-RU");
         });
